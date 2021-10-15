@@ -42,6 +42,7 @@ void OnPointCloud(const sensor_msgs::PointCloud2ConstPtr &ros_pc2) {
     header.stamp = ros::Time::now();
 
     if (use_roi_filter_) {
+        autosense::roi::approxVoxelGridFilter<autosense::PointI>(0.05, 5, cloud);
         autosense::roi::applyROIFilter<autosense::PointI>(params_roi_, cloud);
     }
 

@@ -8,7 +8,7 @@ tracking: {
   TrackingWorker: {
       ##----------------- Matcher: tracker<->observed object association
       matcher_method_name: "hungarian_matcher",
-      matcher_match_distance_maximum: 4.0,
+      matcher_match_distance_maximum: 1.0,
       # motion consistency
       matcher_location_distance_weight: 0.6,
       matcher_direction_distance_weight: 0.2,
@@ -42,7 +42,7 @@ tracking: {
       # If true, histograms between tracker and observation are considered
       # type: bool, int
       # default:
-      tracking_use_histogram_for_match: false,
+      tracking_use_histogram_for_match: true,
       tracking_histogram_bin_size: 10,
       # initial tracker ages 1
       #  1 for more N-samples
